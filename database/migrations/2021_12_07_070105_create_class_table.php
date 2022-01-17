@@ -16,9 +16,9 @@ class CreateClassTable extends Migration
         Schema::create('class', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('capacity');
-            $table->string('walikelas');
+            $table->string('walas');
             $table->string('jurusan');
+            $table->string('jumlah');
             $table->timestamps();
         });
     }

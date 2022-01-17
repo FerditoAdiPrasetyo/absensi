@@ -43,16 +43,22 @@ Route::group(['prefix' => 'manage'], function(){
 
 Route::group(['prefix' => 'store'], function(){
     route::post('lesson','Manage\LessonController@store')->name('store.lesson');
+    route::post('class','Manage\ClassController@store')->name('store.class');
+    route::post('user','Manage\UserController@store')->name('store.user');
 });
 
 Route::group(['prefix' => 'edit'], function () {
     route::get('lesson/{lesson}', 'Manage\LessonController@edit')->name('edit.lesson');
+    route::get('class/{clas}', 'Manage\ClassController@edit')->name('edit.class');
 });
 
 Route::group(['prefix' => 'update'], function () {
     route::patch('lesson/{lesson}', 'Manage\LessonController@update')->name('update.lesson');
+    route::patch('class/{clas}', 'Manage\ClassController@update')->name('update.class');
 });
 
 Route::group(['prefix' => 'destroy'], function () {
     route::delete('lesson/{lesson}', 'Manage\LessonController@destroy')->name('destroy.lesson');
+    route::delete('class/{clas}', 'Manage\ClassController@destroy')->name('destroy.class');
 });
+

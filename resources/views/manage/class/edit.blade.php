@@ -11,14 +11,16 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('store.class')}}" method="post">
+                    <form action="{{route('update.class', $clas->id)}}" method="post">
                         @csrf
+                        @method('PATCH')
                         <div class="row">
+
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="kelas">Kelas</label>
-                                    <select name="name" id="class" class="form-control">
-                                        <option value="">Pilih nama Kelas</option>
+                                    <label for="">Kelas</label>
+                                    <select name="name" id="" class="form-control">
+                                        <option value="">Pilih Nama Kelas</option>
                                         <option value="X">X</option>
                                         <option value="XI">XI</option>
                                         <option value="XII">XII</option>
@@ -41,17 +43,18 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Jurusan</label>
-                                    <input type="text" name="jurusan" id="" class="form-control" placeholder="Jurusan">
+                                    <input type="text" name="jurusan" id="" class="form-control" value="{{$clas->jurusan}}" placeholder="Jurusan">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Jumlah Siswa</label>
-                                    <input type="text" name="jumlah" id="" class="form-control" placeholder="Jumlah Siswa">
+                                    <label for="">Jumlah siswa</label>
+                                    <input type="text" name="jumlah" id="" value="{{$clas->jumlah}}" class="form-control"
+                                        placeholder="Jumlah Siswa">
                                 </div>
                             </div>
                             <div class="mt-2 ml-3">
-                                <button class="btn btn-outline-info">Tambah Kelas</button>
+                                <button class="btn btn-outline-info">Simpan kelas baru</button>
                                 <a href="{{route('home')}}" class="btn btn-outline-secondary">Back To Home</a>
                             </div>
                         </div>
@@ -61,4 +64,5 @@
         </div>
     </div>
 </div>
+
 @endsection
