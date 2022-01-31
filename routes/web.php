@@ -32,12 +32,15 @@ Route::group(['prefix' => 'manage'], function(){
     //user
     route::get('/user','Manage\UserController@index')->name('manage.user');
     route::get('/add/form/invite','Manage\UserController@create')->name('manage.add.form.invite');
-    //lesson
+    //lessons
     route::get('/lessons','Manage\LessonController@index')->name('manage.lessons');
     route::get('/add/form/lesson','Manage\LessonController@create')->name('manage.add.form.lesson');
     //class
     route::get('/class','Manage\ClassController@index')->name('manage.class');
     route::get('/add/form/class','Manage\ClassController@create')->name('manage.add.form.class');
+    //students
+    route::get('students','Manage\StudentController@index')->name('manage.students');
+    route::get('teacher','Manage\TeacherController@index')->name('manage.teacher');
 });
 
 
@@ -50,15 +53,18 @@ Route::group(['prefix' => 'store'], function(){
 Route::group(['prefix' => 'edit'], function () {
     route::get('lesson/{lesson}', 'Manage\LessonController@edit')->name('edit.lesson');
     route::get('class/{clas}', 'Manage\ClassController@edit')->name('edit.class');
+    route::get('user/{user}', 'Manage\UserController@edit')->name('edit.user');
 });
 
 Route::group(['prefix' => 'update'], function () {
     route::patch('lesson/{lesson}', 'Manage\LessonController@update')->name('update.lesson');
     route::patch('class/{clas}', 'Manage\ClassController@update')->name('update.class');
+    route::patch('user/{user}', 'Manage\UserController@update')->name('update.user');
 });
 
 Route::group(['prefix' => 'destroy'], function () {
     route::delete('lesson/{lesson}', 'Manage\LessonController@destroy')->name('destroy.lesson');
     route::delete('class/{clas}', 'Manage\ClassController@destroy')->name('destroy.class');
+    route::delete('user/{user}', 'Manage\UserController@destroy')->name('destroy.user');
 });
 

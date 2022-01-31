@@ -34,8 +34,8 @@
                                             <form action="{{route('destroy.lesson', $lesson->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="{{route('edit.lesson',$lesson->id)}}" class="btn btn-info btn-sm">Edit lesson</a>
-                                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                <a href="{{route('edit.lesson',$lesson->id)}}" class="btn btn-outline-info btn-sm">Edit lesson</a>
+                                                <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
                                             </form>
 
                                         </td>

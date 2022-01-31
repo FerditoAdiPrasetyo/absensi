@@ -7,14 +7,13 @@
             <div class="card border-0 shadow-sm">
                 <div class="card-header border-0 bg-white shadow-sm">
                     <div class="d-flex justify-content-end">
-                        <a href="{{route('manage.add.form.invite')}}" class="btn btn-outline-info">Invite New Member</a>
                         <a href="{{route('home')}}" class="btn btn-outline-secondary ml-3">Back To Home</a>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="mt-2 mb-2">
-                        <a href="{{route('manage.students')}}" class="btn btn-outline-info">Manage Student</a>
-                        <a href="{{route('manage.teacher')}}" class="btn btn-outline-secondary">Manage Teacher</a>
+                        {{--  <a href="#" class="btn btn-outline-info">Manage Student</a>
+                        <a href="#" class="btn btn-outline-secondary">Manage Teacher</a>  --}}
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped">
